@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -7,66 +7,68 @@ import 'swiper/css/navigation';
 import ReviewPhoto from "./icons/mainReview.svg"
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-    export function StockSwiper () {
+export function StockSwiper() {
 
-      return (
+    return (
         <>
-        <div className="swiper-navigate">
-            <div className="fa-solid fa-arrow-left"></div>
-            <div className="fa-solid fa-arrow-right"></div>
-        </div>
-        <Swiper
-            slidesPerView = {2}
-            slidesPerGroup={1}
-            spaceBetween = {30}
-            centeredSlides = {true}
-            loop = {true}
-            autoplay = {{
-            delay: 3500,
-            disableOnInteraction: true
-            }}
-            pagination = {{
-            el: ".swiper-pagination",
-            clickable: true
-            }}
-            navigation = {{
-            nextEl: ".fa-arrow-right",
-            prevEl: ".fa-arrow-left",
-            }}
-            modules={[Autoplay, Pagination, Navigation]}
-            className='stock-swiper'>
+            <div className="swiper-navigate">
+                <a href='/' className="fa-solid fa-arrow-left"
+                    target="_blank" rel="noopener noreferrer"> </a>
+                <a href='/' className="fa-solid fa-arrow-right"
+                    target="_blank" rel="noopener noreferrer"> </a>
+            </div>
+            <Swiper
+                slidesPerView={2}
+                slidesPerGroup={1}
+                spaceBetween={30}
+                centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: true
+                }}
+                pagination={{
+                    el: ".swiper-pagination",
+                    clickable: true
+                }}
+                navigation={{
+                    nextEl: ".fa-arrow-right",
+                    prevEl: ".fa-arrow-left",
+                }}
+                modules={[Autoplay, Pagination, Navigation]}
+                className='stock-swiper'>
                 <div className="swiper-wrapper">
-                    <SwiperSlide><img src="https://loremflickr.com/500/400" loading="lazy" alt="stock 1"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400" loading="lazy" alt="stock 1" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=2" loading="lazy" alt="stock 2"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=2" loading="lazy" alt="stock 2" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=3" loading="lazy" alt="stock 3"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=3" loading="lazy" alt="stock 3" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=4" loading="lazy" alt="stock 4"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=4" loading="lazy" alt="stock 4" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=5" loading="lazy" alt="stock 5"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=5" loading="lazy" alt="stock 5" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=6" loading="lazy" alt="stock 6"/>
+                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=6" loading="lazy" alt="stock 6" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
@@ -74,75 +76,59 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
                     </SwiperSlide>
                 </div>
                 <div className="swiper-pagination"></div>
-        </Swiper>
+            </Swiper>
         </>
-      )
-    }
-    export function ReviewSwiper () {
+    )
+}
+export function ReviewSwiper() {
 
-        return (
-          <>
-          <div className="swiper-navigate">
-              <div className="fa-solid fa-arrow-left"></div>
-              <div className="fa-solid fa-arrow-right"></div>
-          </div>
-          <Swiper
-              slidesPerView = {3}
-              slidesPerGroup={1}
-              spaceBetween = {30}
-              centeredSlides = {true}
-              loop = {true}
-              autoplay = {{
-              delay: 3500,
-              disableOnInteraction: true
-              }}
-              pagination = {{
-              el: ".swiper-pagination",
-              clickable: true
-              }}
-              navigation = {{
-              nextEl: ".fa-arrow-right",
-              prevEl: ".fa-arrow-left",
-              }}
-              modules={[Autoplay, Pagination, Navigation]}
-              className='stock-swiper'>
-                    <div className="swiper-wrapper">
-                        <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 1"/>
-        
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 2"/>
+    return (
+        <>
+            <div className="swiper-navigate">
+                <a href='/' className="fa-solid fa-arrow-left"
+                    target="_blank" rel="noopener noreferrer"> </a>
+                <a href='/' className="fa-solid fa-arrow-right"
+                    target="_blank" rel="noopener noreferrer"> </a>
+            </div>
+            <Swiper
+                slidesPerView={3}
+                slidesPerGroup={1}
+                spaceBetween={30}
+                centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: true
+                }}
+                pagination={{
+                    el: ".swiper-pagination",
+                    clickable: true
+                }}
+                navigation={{
+                    nextEl: ".fa-arrow-right",
+                    prevEl: ".fa-arrow-left",
+                }}
+                modules={[Autoplay, Pagination, Navigation]}
+                className='stock-swiper'>
+                <div className="swiper-wrapper">
+                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 1" />
 
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 3"/>
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 2" />
 
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 4"/>
-                        
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 5"/>
-                        
-                        </SwiperSlide>
-                    </div>
-                  <div className="swiper-pagination"></div>
-          </Swiper>
-          </>
-        )
-      }
-  //   export const rewiewSwiper = (() => new Swiper(".review-swiper", {
-  //     slidesPerView: 3,
-  //     spaceBetween: 30,
-  //     loop: true,
-  //     autoHeight: true,
-  //     autoplay: {
-  //       delay: 3500,
-  //       disableOnInteraction: false
-  //     },
-  //     pagination: {
-  //       el: ".swiper-pagination",
-  //       clickable: true
-  //     },
-  //     navigation: {
-  //       nextEl: ".fa-arrow-right",
-  //       prevEl: ".fa-arrow-left",
-  //     }
-  // }));
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 3" />
+
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 4" />
+
+                    </SwiperSlide>
+                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 5" />
+
+                    </SwiperSlide>
+                </div>
+                <div className="swiper-pagination"></div>
+            </Swiper>
+        </>
+    )
+}

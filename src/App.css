@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
 * {
   font-family: Raleway;
 }
@@ -120,7 +119,8 @@ header .nav .nav-item__contact-us:hover {
 header .nav .nav-item__search-box .form-control {
   border: 1px solid #000;
 }
-header .nav .nav-item__search-box .btn-check:focus + .btn, header .nav .nav-item__search-box .btn:focus {
+header .nav .nav-item__search-box .btn-check:focus + .btn,
+header .nav .nav-item__search-box .btn:focus {
   color: #000;
   box-shadow: none;
   outline: none;
@@ -212,6 +212,9 @@ main {
   right: 1%;
   cursor: pointer;
 }
+.swiper-navigate a {
+  color: #000;
+}
 .swiper-navigate .fa-solid {
   margin: 0 10px;
 }
@@ -228,7 +231,8 @@ main {
   font-weight: bold;
 }
 
-.novelties, .popular {
+.novelties,
+.popular {
   margin-bottom: 3rem;
 }
 

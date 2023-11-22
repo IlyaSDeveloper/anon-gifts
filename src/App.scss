@@ -1,54 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
 * {
     font-family: Raleway;
 }
+
 html {
     height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
+
 a {
     text-decoration: none;
 }
+
 .disabled-link {
     pointer-events: none;
     color: gray;
 }
+
 .hide {
     display: none;
 }
+
 header {
     flex: 0 0 auto;
+
     .form-control:focus {
         box-shadow: none;
     }
+
     .nav {
         justify-content: space-between;
         margin-bottom: 1%;
+
         .nav__item {
             margin: 15px auto;
             display: flex;
         }
+
         .nav__block {
             &.center-block {
                 flex: 0 1 30vw;
             }
         }
+
         .nav-block__center {
             flex: 0 1 30vw;
             max-width: 560px;
         }
+
         .nav-item {
             &__logo {
                 img {
                     width: 130px;
                 }
             }
+
             &__city {
                 display: none;
+
                 &::before {
                     height: 21px;
                     width: 21px;
@@ -59,129 +72,170 @@ header {
                     content: '';
                 }
             }
+
             &__link {
                 color: #000;
+
                 &:hover,
                 &:active,
                 &:focus {
                     border-bottom: 1px solid #000;
                 }
             }
+
             &__links {
                 display: flex;
                 gap: 15px;
                 min-height: 25px;
                 justify-content: center;
             }
+
             &__social-link {
                 height: 21px;
                 width: 21px;
                 background-size: contain;
                 background-repeat: no-repeat;
+
                 &.user {
                     background-image: url(./icons/user.svg);
                     cursor: pointer;
+
                     &:hover {
                         filter: invert(34%) sepia(99%) saturate(411%) hue-rotate(1deg) brightness(100%) contrast(89%);
                     }
                 }
+
                 &.bag {
                     background-image: url(./icons/bag.svg);
+
                     &:hover {
                         filter: invert(34%) sepia(99%) saturate(411%) hue-rotate(1deg) brightness(100%) contrast(89%);
                     }
                 }
+
                 &.like {
                     background-image: url(./icons/like.svg);
+
                     &:hover {
                         filter: invert(34%) sepia(99%) saturate(411%) hue-rotate(1deg) brightness(100%) contrast(89%);
                     }
                 }
+
                 &s {
                     justify-content: flex-end;
                     display: flex;
                     gap: 10px;
                 }
             }
+
             &__contact-us {
                 color: #000;
                 text-decoration: none;
                 padding: 15px 0;
+
                 &::before {
                     content: '\f0e0';
                     margin-right: 5px;
                 }
+
                 &:hover {
                     color: #956814;
                 }
             }
-            &__search-box { 
+
+            &__search-box {
                 .form-control {
                     border: 1px solid #000;
                 }
-                .btn-check:focus+.btn, .btn:focus {
+
+                .btn-check:focus+.btn,
+                .btn:focus {
                     color: #000;
                     box-shadow: none;
                     outline: none;
                 }
+
                 .btn {
                     color: #000;
                     border-color: transparent;
                     z-index: 0;
+
                     &:hover {
                         color: #000;
                         background-color: transparent;
                         border-color: transparent;
                     }
                 }
+
                 .ms-n5 {
                     margin-left: -40px;
                     border-top-left-radius: 0px !important;
                     border-bottom-left-radius: 0px !important;
                     border-left: 1px solid #000;
                 }
-                input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
-                input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+                input[type=text]::-ms-clear {
+                    display: none;
+                    width: 0;
+                    height: 0;
+                }
+
+                input[type=text]::-ms-reveal {
+                    display: none;
+                    width: 0;
+                    height: 0;
+                }
+
                 input::-webkit-search-decoration,
                 input::-webkit-search-cancel-button,
                 input::-webkit-search-results-button,
-                input::-webkit-search-results-decoration { display: none; }
+                input::-webkit-search-results-decoration {
+                    display: none;
+                }
             }
         }
-    } 
+    }
 }
+
 main {
-  flex: 1 0 auto;  
+    flex: 1 0 auto;
 }
+
 .breadcrumbs {
     a {
         color: #000;
     }
+
     a.disabled {
         color: gray;
         pointer-events: none;
     }
 }
+
 .main_content {
     &-logo {
         background-image: url(./icons/logo.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
-        padding: 11.5rem 0 ;
+        padding: 11.5rem 0;
     }
+
     &-title {
         font-family: 'Allison', cursive;
         font-size: 8rem;
     }
+
     .content_title {
         font-family: "Allison", cursive;
         font-size: 8rem;
+
         &-text {
             font-size: 1.5rem;
         }
     }
 }
+
 .swiper {
     &-slide {
         margin: 0 auto 3%;
@@ -189,7 +243,7 @@ main {
         text-align: center;
         font-size: 18px;
         background: #A3A3A3;
-    
+
         /* Center slide text vertically */
         display: block;
         -webkit-box-pack: center;
@@ -200,6 +254,7 @@ main {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+
         img {
             display: block;
             width: 100%;
@@ -207,53 +262,69 @@ main {
             margin: 0 auto;
         }
     }
+
     &-navigate {
         position: absolute;
         top: 11%;
         right: 1%;
         cursor: pointer;
+
+        a {
+            color: #000;
+        }
+
         .fa-solid {
             margin: 0 10px;
+
             &:hover {
                 color: darken(wheat, 50%);
             }
         }
     }
+
     &-description {
         display: flex;
         justify-content: space-between;
         font-size: 16px;
         margin: 1% 0;
     }
+
     &-percent {
         font-weight: bold;
-    }   
+    }
 }
-.novelties, .popular {
+
+.novelties,
+.popular {
     margin-bottom: 3rem;
 }
+
 .content-list {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
     .product {
         &-item {
             text-align: center;
             display: flex;
             color: #000;
             flex-direction: column;
+
             &:hover,
-            &:focus, 
+            &:focus,
             &:active {
                 .product-buy {
                     background-color: #b13642;
                 }
             }
         }
+
         &-image {
             position: relative;
             max-height: 312px;
             font-family: 'Font Awesome 6 Free';
+
             &::before {
                 position: absolute;
                 content: "HIT";
@@ -269,10 +340,12 @@ main {
                 font-family: Raleway;
                 font-size: 15px;
             }
+
             img {
                 width: 100%;
                 height: 100%;
             }
+
             &.favorites {
                 &::after {
                     display: flex;
@@ -287,15 +360,18 @@ main {
                 }
             }
         }
+
         &-name {
             margin: 5px 0;
             margin-top: auto;
         }
+
         &-footer {
             display: flex;
             justify-content: space-between;
             padding: 15px 0;
         }
+
         &-edit {
             width: 24px;
             height: 24px;
@@ -305,6 +381,7 @@ main {
             background-repeat: no-repeat;
             border: none;
         }
+
         &-delete {
             width: 24px;
             height: 24px;
@@ -314,12 +391,14 @@ main {
             background-repeat: no-repeat;
             border: none;
         }
+
         &-buy {
             display: flex;
             flex: 1 1;
             justify-content: center;
             padding: 5px 0;
-            background-color: #9AAFB0;;
+            background-color: #9AAFB0;
+            ;
             border-radius: 10px;
             border: none;
             color: white;
@@ -327,74 +406,89 @@ main {
         }
     }
 }
+
 .show-all {
     display: block;
     text-align: end;
     margin-right: 30px;
     cursor: pointer;
     color: #000;
+
     &:hover {
         color: #956814;
     }
 }
+
 footer {
     flex: 0 0 auto;
     background: #B7BC9A;
     padding-top: 3%;
+
     .short-links {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
         .info-link,
         .customers-link,
         .contacts-link {
             text-decoration: none;
             color: black;
             display: flex;
+
             &:hover {
                 color: white;
             }
         }
+
         .social-links {
             list-style: none;
             display: flex;
             gap: 17px;
             font-size: 24px;
             padding: inherit;
+
             a {
                 text-decoration: none;
                 color: white;
+
                 &:hover {
                     color: #eebd19;
                 }
             }
+
             .zen {
                 background-image: url('./icons/zen.svg');
                 height: 24px;
                 width: 24px;
                 margin-top: 5px;
+
                 &:hover {
-                    filter: invert(34%) sepia(99%) saturate(411%)
-                     hue-rotate(1deg) brightness(100%) contrast(89%);
+                    filter: invert(34%) sepia(99%) saturate(411%) hue-rotate(1deg) brightness(100%) contrast(89%);
                 }
             }
         }
     }
+
     .copyright {
         display: flex;
         justify-content: space-between;
+
         .copyright-text {
             &::before {
                 content: "\00A9";
                 font-size: 16px;
             }
         }
+
         .copyright-delivery {
             display: flex;
             gap: 15px;
+
             .delivery-service {
                 display: flex;
                 vertical-align: middle;
+
                 img {
                     width: 100%;
                 }
