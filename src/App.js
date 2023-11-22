@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 
 import './App.css';
-import StockSwiper from './Slider.jsx';
+import { StockSwiper, ReviewSwiper } from './Slider.jsx';
 
 import YandexDelivery from './icons/yandex.svg';
 import RussianDelivery from './icons/russmail.svg';
 import CDEKDelivery from './icons/cdek.svg';
 import Logo from './icons/logoIcon.svg';
+import NewProduct from './icons/novelties.svg';
+import PopularProduct from './icons/popular.svg';
 
 function App() {
     useEffect(() => {
@@ -22,7 +24,7 @@ function App() {
                       <a href="/pages/main/main.html" className="nav__item nav-item__logo"><img src={Logo} alt="logo icon"/></a>
                       <div className="nav__item nav-item__city"></div>
                   </div>
-                  <div className="nav__block">
+                  <div className="nav__block nav-block__center">
                       <div className="nav__item nav-item__links">
                           <div className="nav-item__link">Каталог</div>
                           <div className="nav-item__link">Условия</div>
@@ -65,58 +67,12 @@ function App() {
                     <StockSwiper />
                 {/* </div> */}
             </section>
-            {/* <section className="swiper stock-swiper pb-5">
-                <h2 className="text-center pt-5 pb-3">Акции</h2>
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400" loading="lazy" alt="stock 1"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400&a=2" loading="lazy" alt="stock 2"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400&a=3" loading="lazy" alt="stock 3"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400&a=4" loading="lazy" alt="stock 4"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400&a=5" loading="lazy" alt="stock 5"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                    <div className="swiper-slide"><img src="https://api.lorem.space/image/game?w=500&h=400&a=6" loading="lazy" alt="stock 6"/>
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="swiper-pagination d-none"></div>
-                <div className="swiper-navigate">
-                    <div className="fa-solid fa-arrow-left"></div>
-                    <div className="fa-solid fa-arrow-right"></div>
-                </div>
-            </section> */}
             <section className="novelties">
                 <h2 className="text-center pt-5 pb-3">Новинки</h2>
                 <div className="novelties-wrapper">
                     <div className="novelties-item content-list">
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/novelties.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={NewProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Туалетная вода VERSACE</div>
                             <div className="product-price">8 700 р.</div>
                             <div className="product-footer">
@@ -124,7 +80,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/novelties.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={NewProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Туалетная вода VERSACE</div>
                             <div className="product-price">8 700 р.</div>
                             <div className="product-footer">
@@ -132,7 +88,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/novelties.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={NewProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Туалетная вода VERSACE</div>
                             <div className="product-price">8 700 р.</div>
                             <div className="product-footer">
@@ -140,7 +96,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/novelties.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={NewProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Туалетная вода VERSACE</div>
                             <div className="product-price">8 700 р.</div>
                             <div className="product-footer">
@@ -156,7 +112,7 @@ function App() {
                 <div className="popular-wrapper">
                     <div className="popular-item content-list">
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/popular.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={PopularProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Туалетная вода VERSACE</div>
                             <div className="product-price">8 700 р.</div>
                             <div className="product-footer">
@@ -164,7 +120,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/popular.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={PopularProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Сережки кольца</div>
                             <div className="product-price">700 р.</div>
                             <div className="product-footer">
@@ -172,7 +128,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/popular.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={PopularProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Сережки кольца</div>
                             <div className="product-price">700 р.</div>
                             <div className="product-footer">
@@ -180,7 +136,7 @@ function App() {
                             </div>
                         </div>
                         <div className='product-item'>
-                            <div className='product-image'><img src="./icons/popular.svg" loading='lazy' alt='Туалетная вода' /></div>
+                            <div className='product-image'><img src={PopularProduct} loading='lazy' alt='Туалетная вода' /></div>
                             <div className="product-name">Сережки кольца</div>
                             <div className="product-price">700 р.</div>
                             <div className="product-footer">
@@ -193,20 +149,7 @@ function App() {
             </section>
             <section className="swiper review-swiper pb-5">
                 <h2 className="text-center pt-5 pb-3">Отзывы</h2>
-                <div className="swiper-wrapper">
-                    <div className="swiper-slide"><img src="./icons/mainReview.svg" loading="lazy" alt="review 1"/>
-    
-                    </div>
-                    <div className="swiper-slide"><img src="./icons/mainReview.svg" loading="lazy" alt="review 2"/>
-
-                    </div>
-                    <div className="swiper-slide"><img src="./icons/mainReview.svg" loading="lazy" alt="review 3"/></div>
-                </div>
-                <div className="swiper-pagination d-none"></div>
-                <div className="swiper-navigate">
-                    <div className="fa-solid fa-arrow-left"></div>
-                    <div className="fa-solid fa-arrow-right"></div>
-                </div>
+                <ReviewSwiper />
             </section>
         </div>
     </main>
