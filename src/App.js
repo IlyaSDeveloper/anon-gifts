@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import { StockSwiper, ReviewSwiper } from './Slider.jsx';
+import { GeoLocation } from './GeoLocation.jsx';
 
 import YandexDelivery from './icons/yandex.svg';
 import RussianDelivery from './icons/russmail.svg';
@@ -10,11 +11,9 @@ import Logo from './icons/logoIcon.svg';
 import NewProduct from './icons/novelties.svg';
 import PopularProduct from './icons/popular.svg';
 
-function App() {
-    useEffect(() => {
-        StockSwiper()
 
-    }, [])
+function App() {
+      
     return (
         <>
             <header className="App-header">
@@ -22,7 +21,7 @@ function App() {
                     <nav className="nav">
                         <div className="nav__block">
                             <a href="/pages/main/main.html" className="nav__item nav-item__logo"><img src={Logo} alt="logo icon" /></a>
-                            <div className="nav__item nav-item__city"></div>
+                            <div className="nav__item nav-item__city"><GeoLocation /></div>
                         </div>
                         <div className="nav__block nav-block__center">
                             <div className="nav__item nav-item__links">

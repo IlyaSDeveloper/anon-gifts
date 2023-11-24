@@ -50,9 +50,6 @@ header .nav .nav-block__center {
 header .nav .nav-item__logo img {
   width: 130px;
 }
-header .nav .nav-item__city {
-  display: none;
-}
 header .nav .nav-item__city::before {
   height: 21px;
   width: 21px;
