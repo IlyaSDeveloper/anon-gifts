@@ -8,6 +8,12 @@ import ReviewPhoto from "./icons/mainReview.svg"
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export function StockSwiper() {
+//     const getData = async () => {
+//         let response = await fetch('https://loremflickr.com/500/400');
+//             let json = await response.json();
+//             console.log(json)
+// }
+const slidesCount = Array.from(Array(6).keys());
 
     return (
         <>
@@ -25,7 +31,7 @@ export function StockSwiper() {
                 loop={true}
                 autoplay={{
                     delay: 3500,
-                    disableOnInteraction: true
+                    disableOnInteraction: false
                 }}
                 pagination={{
                     el: ".swiper-pagination",
@@ -38,7 +44,16 @@ export function StockSwiper() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className='stock-swiper'>
                 <div className="swiper-wrapper">
-                    <SwiperSlide><img src="https://loremflickr.com/500/400" loading="lazy" alt="stock 1" />
+                    {slidesCount.map((i) => {
+                        return (<SwiperSlide key={i+2}>
+                            <img src={`https://loremflickr.com/500/400?a${i}=${i}`} loading="lazy" alt={`stock ${i+1}`} />
+                            <div className="swiper-description">
+                                <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
+                                <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
+                            </div>
+                        </SwiperSlide>)
+                    })}
+                    {/* <SwiperSlide><img src="https://loremflickr.com/500/400" loading="lazy" alt="stock 1" />
                         <div className="swiper-description">
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
@@ -73,7 +88,7 @@ export function StockSwiper() {
                             <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
                             <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
                         </div>
-                    </SwiperSlide>
+                    </SwiperSlide> */}
                 </div>
                 <div className="swiper-pagination"></div>
             </Swiper>
@@ -98,7 +113,7 @@ export function ReviewSwiper() {
                 loop={true}
                 autoplay={{
                     delay: 3500,
-                    disableOnInteraction: true
+                    disableOnInteraction: false
                 }}
                 pagination={{
                     el: ".swiper-pagination",
