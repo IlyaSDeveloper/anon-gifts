@@ -53,42 +53,6 @@ const slidesCount = Array.from(Array(6).keys());
                             </div>
                         </SwiperSlide>)
                     })}
-                    {/* <SwiperSlide><img src="https://loremflickr.com/500/400" loading="lazy" alt="stock 1" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=2" loading="lazy" alt="stock 2" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=3" loading="lazy" alt="stock 3" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=4" loading="lazy" alt="stock 4" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=5" loading="lazy" alt="stock 5" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide><img src="https://loremflickr.com/500/400?a=6" loading="lazy" alt="stock 6" />
-                        <div className="swiper-description">
-                            <div className="swiper-percent">Фантастическая распродажа  до -50%</div>
-                            <div className="swiper-dates">только с 1 февраля по 5 февраля</div>
-                        </div>
-                    </SwiperSlide> */}
                 </div>
                 <div className="swiper-pagination"></div>
             </Swiper>
@@ -96,7 +60,7 @@ const slidesCount = Array.from(Array(6).keys());
     )
 }
 export function ReviewSwiper() {
-
+    const slidesCount = Array.from(Array(5).keys());
     return (
         <>
             <div className="swiper-navigate">
@@ -126,21 +90,11 @@ export function ReviewSwiper() {
                 modules={[Autoplay, Pagination, Navigation]}
                 className='stock-swiper'>
                 <div className="swiper-wrapper">
-                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 1" />
+                    {slidesCount.map((i) => {
+                        return (<SwiperSlide className="swiper-slide" key={i}><img src={ReviewPhoto} loading="lazy" alt={`review ${i+1}`} />
 
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 2" />
-
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 3" />
-
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 4" />
-
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide"><img src={ReviewPhoto} loading="lazy" alt="review 5" />
-
-                    </SwiperSlide>
+                        </SwiperSlide>)
+                    })}
                 </div>
                 <div className="swiper-pagination"></div>
             </Swiper>

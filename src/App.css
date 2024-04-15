@@ -186,6 +186,9 @@ main {
   font-size: 1.5rem;
 }
 
+.swiper {
+  z-index: 0;
+}
 .swiper-slide {
   margin: 0 auto 3%;
   height: 370px;

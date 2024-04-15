@@ -237,6 +237,7 @@ main {
 }
 
 .swiper {
+    z-index: 0;
     &-slide {
         margin: 0 auto 3%;
         height: 370px;
