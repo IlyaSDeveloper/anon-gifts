@@ -1,18 +1,13 @@
+import { useState } from 'react';
 import './SingInUp.css';
 
 export default function SingInUp({closeModal}) {
-//     const container = document.querySelector('#container');
-//     const signUpButton = document.querySelector('#signUp');
-// const signInButton = document.querySelector('#signIn');
+    const [signUp, setSignUp] = useState(false);
+    console.log(signUp);
 
-//     signUpButton.addEventListener('click', () =>
-// container.classList.add('right-panel-active'))
-
-// signInButton.addEventListener('click', () =>
-// container.classList.remove('right-panel-active'))
     return (
         <div className="modal">
-            <div className="container" id="container">
+            <div className={`container ${signUp ? 'right-panel-active' : '' }`} id="container">
                 <span className="close" onClick={closeModal} title="Close Modal">×</span>
                 <div className="form-container sign-up-container">
                     <form>
@@ -77,12 +72,12 @@ export default function SingInUp({closeModal}) {
                         <div className="overlay-panel overlay-left">
                             <h2>С возвращением!</h2>
                             <p>Войдите чтобы увидеть новые предложения</p>
-                            <button className="ghost" id="signIn">Войти</button>
+                            <button className="ghost" id="signIn" onClick={() => setSignUp(!signUp)}>Войти</button>
                         </div>
                         <div className="overlay-panel overlay-right">
                             <h2>Добро пожаловать!</h2>
                             <p>Присоединитесь к нам и получите доступ к акциям и скидкам</p>
-                            <button className="ghost" id="signUp">Зарегистрироваться</button>
+                            <button className="ghost" id="signUp" onClick={() => setSignUp(!signUp)}>Зарегистрироваться</button>
                         </div>
                     </div>
                 </div>

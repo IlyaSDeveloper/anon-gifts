@@ -61,6 +61,7 @@ export default function Header() {
                                     target="_blank" rel="noopener noreferrer"> </a>
                                 <Link to='#' onClick={openModal} className="nav-item__social-link user"
                                  rel="noopener noreferrer"> </Link>
+                                 {/* <button className="nav-item__social-link user" onClick={openModal}> </button> */}
                                 <a href=" " className="nav-item__social-link like"
                                     target="_blank" rel="noopener noreferrer"> </a>
                             </div>
