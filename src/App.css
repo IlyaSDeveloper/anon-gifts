@@ -167,22 +167,22 @@ main {
   pointer-events: none;
 }
 
-.main_content-logo {
+.main-content-logo {
   background-image: url(./icons/logo.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   padding: 11.5rem 0;
 }
-.main_content-title {
+.main-content-title {
   font-family: "Allison", cursive;
   font-size: 8rem;
 }
-.main_content .content_title {
+.main-content .content-title {
   font-family: "Allison", cursive;
   font-size: 8rem;
 }
-.main_content .content_title-text {
+.main-content .content-title-text {
   font-size: 1.5rem;
 }
 

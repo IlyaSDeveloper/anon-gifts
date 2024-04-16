@@ -1,43 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
-export function GeoLocation () {
-    const [city, setCity] = useState('');
-    const ymaps = window.ymaps;
+export function GeoLocation() {
+  const [city, setCity] = useState('');
+  const ymaps = window.ymaps;
 
-// useEffect(() => {
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(position => {
-//         setLocation({
-//           latitude: position.coords.latitude,
-//           longitude: position.coords.longitude
-//         });
-//       });
-//     } else {
-//       console.error('Geolocation is not supported by this browser.');
-//     }
+  const fetchCityName = useCallback((latitude, longitude) => {
+    if (!ymaps) {
+      console.error('Yandex Maps API is not available.');
+      return;
+    }
 
-//   }, []);
-  useEffect(() => {
-    ymaps.ready(function(){
-        // var myReverseGeocoder = ymaps.geocode([location.latitude,location.longitude]);
-        //     myReverseGeocoder.then(function (res) {
-        //        setCity(res.geoObjects.get(0).properties.get('description'));
-        //        debugger
-        //     });
-        ymaps.geolocation.get({provider: 'yandex'}).then(function (res) {
-            const data = res.geoObjects.get(0).properties.get('metaDataProperty').GeocoderMetaData.AddressDetails
-            .Country.AdministrativeArea;
-            const administrativeAreaNames = data.AdministrativeAreaName; //region
-            if ('SubAdministrativeArea' in data) {
-                setCity(data.SubAdministrativeArea.Locality.LocalityName);//city
-            } else if (data.Locality) {
-                setCity(data.Locality.LocalityName);
-            } else {
-                setCity(data.AdministrativeAreaName);
-            }
-        })
+    ymaps.ready(() => {
+      ymaps.geolocation.get({
+        provider: 'yandex',
+        mapStateAutoApply: true,
+        // If you have specific coordinates, you can use them like this:
+        // coords: [latitude, longitude]
+      }).then((res) => {
+        const addressDetails = res.geoObjects.get(0).properties.get('metaDataProperty').GeocoderMetaData.AddressDetails;
+        const countryData = addressDetails.Country.AdministrativeArea;
+        const administrativeAreaName = countryData.AdministrativeAreaName; // region
+
+        let localityName;
+        if ('SubAdministrativeArea' in countryData) {
+          localityName = countryData.SubAdministrativeArea.Locality.LocalityName; // city
+        } else if (countryData.Locality) {
+          localityName = countryData.Locality.LocalityName;
+        } else {
+          localityName = administrativeAreaName;
+        }
+
+        setCity(localityName);
+      });
     });
-  }, [])
+  }, [ymaps]);
+
+  // Initial fetch for the city name
+  useEffect(() => {
+    fetchCityName();
+  }, [fetchCityName]);
+
+  // Function to manually update the location
+//   const updateLocation = (newLatitude, newLongitude) => {
+//     fetchCityName(newLatitude, newLongitude);
+//   };
+
   return (
-    <p>{city}</p>
-)}
+    <>
+      <p>{city}</p>
+      {/* You can add a button or any other UI element to trigger location update */}
+      {/* <button onClick={() => updateLocation(55.751244, 37.618423)}>Update Location</button> */}
+    </>
+  );
+}

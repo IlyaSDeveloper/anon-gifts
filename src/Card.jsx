@@ -1,15 +1,21 @@
 import React from "react";
 
-export default function Card(produxtData) {
+// Utility function for formatting price
+const formatPrice = (price) => {
+  return price.replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ');
+};
 
-    return (
-        <a href={`./${produxtData.prodId}`} class='product__item'>
-            <div class='product__item-image'><img src={`${produxtData.photo}`} alt={produxtData.title} /></div>
-            <div class="product__item-name">{produxtData.title}</div>
-            <div class="product__item-price">{produxtData.price.replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ')} р.</div>
-            <div class="product__item-footer">
-                <button class="product__item-buy">В корзину</button>
-            </div>
-        </a>
-    )
+export default function Card({ prodId, photo, title, price }) {
+  return (
+    <a href={`./${prodId}`} className='product__item'>
+      <div className='product__item-image'>
+        <img src={photo} alt={title} />
+      </div>
+      <div className="product__item-name">{title}</div>
+      <div className="product__item-price">{formatPrice(price)} р.</div>
+      <div className="product__item-footer">
+        <button className="product__item-buy">В корзину</button>
+      </div>
+    </a>
+  );
 }

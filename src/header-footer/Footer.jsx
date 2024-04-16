@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import YandexDelivery from '../icons/yandex.svg';
 import RussianDelivery from '../icons/russmail.svg';
@@ -12,7 +13,7 @@ export default function Header() {
         <footer>
                 <div className="container">
                     <div className="short-links">
-                        <div className="short-list logo"><a href="/"><img src={Logo} alt="logo icon" /></a></div>
+                        <div className="short-list logo"><Link to="/"><img src={Logo} alt="logo icon" /></Link></div>
                         <div className="short-list customers">
                             <h5 className="castomer-title">Покупателям</h5>
                             <a href="/" className="customers-link">Каталог</a>

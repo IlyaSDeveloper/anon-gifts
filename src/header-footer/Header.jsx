@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Modal from 'react-modal';
 
@@ -15,26 +15,27 @@ export default function Header() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const location = useLocation();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
   
     useEffect(() => {
-      console.log('Current location is ', location);
+        console.log('Current location is ', location);
     }, [location]);
 
     const openModal = () => {
-    setModalIsOpen(true);
-    Modal.setAppElement('body');
+        Modal.setAppElement('body');
+        setModalIsOpen(true);
     };
 
     const closeModal = () => {
-    setModalIsOpen(false);
+        setModalIsOpen(false);
+
     };
     return (
-        <header className="App-header">
+        <header className="header">
                 <div className="container">
                     <nav className="nav">
                         <div className="nav__block">
-                            <a href="/pages/main/main.html" className="nav__item nav-item__logo"><img src={Logo} alt="logo icon" /></a>
+                            <Link to="/" className="nav__item nav-item__logo"><img src={Logo} alt="logo icon" /></Link>
                             <div className="nav__item nav-item__city"><GeoLocation /></div>
                         </div>
                         <div className="nav__block nav-block__center">
@@ -59,9 +60,8 @@ export default function Header() {
                             <div className="nav__item nav-item__social-links">
                                 <a href=" " className="nav-item__social-link bag"
                                     target="_blank" rel="noopener noreferrer"> </a>
-                                <Link to='#' onClick={openModal} className="nav-item__social-link user"
-                                 rel="noopener noreferrer"> </Link>
-                                 {/* <button className="nav-item__social-link user" onClick={openModal}> </button> */}
+                                <Link to='user' onClick={openModal} className="nav-item__social-link user"> </Link>
+                                 <button className="nav-item__social-link user" onClick={openModal}> </button>
                                 <a href=" " className="nav-item__social-link like"
                                     target="_blank" rel="noopener noreferrer"> </a>
                             </div>
@@ -72,8 +72,8 @@ export default function Header() {
                         </div>
                     </nav>
                 </div>
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-                    <SingInUp closeModal={closeModal}/>
+                <Modal isOpen={modalIsOpen} size={{size: 'sm'}} onRequestClose={closeModal}>
+                    <SingInUp onClose={closeModal}/>
                 </Modal>
             </header>
     )
