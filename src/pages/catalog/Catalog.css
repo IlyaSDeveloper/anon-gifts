@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+@import 'https://fonts.googleapis.com/css2?family=Allison&display=swap';
 .main__content-count {
   display: flex;
   justify-content: right;

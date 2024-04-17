@@ -6,14 +6,13 @@ import Modal from 'react-modal';
 import { GeoLocation } from "../GeoLocation"
 import SingInUp from '../SingInUp.jsx';
 
-
-// css
+import './Header.css';
 
 import Logo from '../icons/logoIcon.svg';
 
 export default function Header() {
+    Modal.setAppElement('body');
     const [modalIsOpen, setModalIsOpen] = useState(false);
-
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -21,14 +20,21 @@ export default function Header() {
         console.log('Current location is ', location);
     }, [location]);
 
+useEffect(() => {
+    //Function the handle body scroll activity
+    const handleBodyScroll = (scrollSwitch) => {
+        document.body.style.overflow = scrollSwitch;
+    };
+    //Apply the status of scroll swiching
+    handleBodyScroll(modalIsOpen ? 'hidden' : 'auto');
+}, [modalIsOpen]);
+
     const openModal = () => {
-        Modal.setAppElement('body');
         setModalIsOpen(true);
     };
 
     const closeModal = () => {
         setModalIsOpen(false);
-
     };
     return (
         <header className="header">
@@ -72,7 +78,13 @@ export default function Header() {
                         </div>
                     </nav>
                 </div>
-                <Modal isOpen={modalIsOpen} size={{size: 'sm'}} onRequestClose={closeModal}>
+                <Modal 
+                    isOpen={modalIsOpen}
+                    size={{size: 'sm'}}
+                    onRequestClose={closeModal}
+                    className="modal"
+                    overlayClassName="Overlay"
+                    >
                     <SingInUp onClose={closeModal}/>
                 </Modal>
             </header>

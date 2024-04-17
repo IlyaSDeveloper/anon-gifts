@@ -7,14 +7,14 @@ import NewProduct from '../../icons/novelties.svg';
 import PopularProduct from '../../icons/popular.svg';
 
 
-export default function Main({ children }) {
+export default function Main() {
 
     return (
         <>
-            <main className="main-content">
-                <section className="main-content-logo">
-                    <h1 className="text-center main-content-title">AnonGifts</h1>
-                    <h2 className="text-center main-content content-title-text">первый интернет-магазин, который умеет хранить тайны</h2>
+            <main className="main__content">
+                <section className="main__content-logo">
+                    <h1 className="text-center main__content-title">AnonGifts</h1>
+                    <h2 className="text-center main__content content-title-text">первый интернет-магазин, который умеет хранить тайны</h2>
                 </section>
                 <div className="container">
                     <section className="swiper stock-swiper pb-5">

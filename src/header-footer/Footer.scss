@@ -1,0 +1,77 @@
+footer {
+    flex: 0 0 auto;
+    background: #B7BC9A;
+    padding-top: 3%;
+
+    .short-links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .info-link,
+        .customers-link,
+        .contacts-link {
+            text-decoration: none;
+            color: black;
+            display: flex;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .social-links {
+            list-style: none;
+            display: flex;
+            gap: 17px;
+            font-size: 24px;
+            padding: inherit;
+
+            a {
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    color: #eebd19;
+                }
+            }
+
+            .zen {
+                background-image: url('../icons/zen.svg');
+                height: 24px;
+                width: 24px;
+                margin-top: 5px;
+
+                &:hover {
+                    filter: invert(34%) sepia(99%) saturate(411%) hue-rotate(1deg) brightness(100%) contrast(89%);
+                }
+            }
+        }
+    }
+
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+
+        .copyright-text {
+            &::before {
+                content: "\00A9";
+                font-size: 16px;
+            }
+        }
+
+        .copyright-delivery {
+            display: flex;
+            gap: 15px;
+
+            .delivery-service {
+                display: flex;
+                vertical-align: middle;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

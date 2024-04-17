@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import YandexDelivery from '../icons/yandex.svg';
 import RussianDelivery from '../icons/russmail.svg';
 import CDEKDelivery from '../icons/cdek.svg';
-
 import Logo from '../icons/logoIcon.svg';
+
+import './Footer.css';
 
 export default function Header() {
 
@@ -16,7 +17,7 @@ export default function Header() {
                         <div className="short-list logo"><Link to="/"><img src={Logo} alt="logo icon" /></Link></div>
                         <div className="short-list customers">
                             <h5 className="castomer-title">Покупателям</h5>
-                            <a href="/" className="customers-link">Каталог</a>
+                            <Link to="catalog" className="customers-link">Каталог</Link>
                             <a href="/" className="customers-link">Условия</a>
                             <a href="/" className="customers-link">Акции</a>
                             <a href="/" className="customers-link">О компании</a>
